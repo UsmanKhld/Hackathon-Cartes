@@ -1,9 +1,9 @@
 import { DashHome } from './DashHome/DashHome';
-import { DashGraph } from './DashGraph/DashGraph';
+import { DashOrders } from './DashOrders/DashOrders';
 import { Sidenav } from './Sidenav/Sidenav'
 
 export {
-    DashGraph,
+    DashOrders,
     DashHome,
     Sidenav
 }

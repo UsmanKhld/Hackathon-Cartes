@@ -48,6 +48,7 @@
 
 .sidenav:hover {
     width: 16rem;
+    z-index: 5;
 }
 
 .sidenav:hover .link-text {

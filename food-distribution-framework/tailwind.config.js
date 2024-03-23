@@ -12,7 +12,7 @@ export default {
       },
       width: {
         '120': '28rem',
-        '200': '50rem'
+        '200': '60rem'
       }
     },
   },

@@ -1,7 +1,7 @@
 import React from 'react'
 import Sidenav from '../Sidenav/Sidenav'
 
-export const DashGraph = () => {
+export const DashOrders = () => {
   return (
     <div>
         <Sidenav />
@@ -14,4 +14,4 @@ export const DashGraph = () => {
   )
 }
 
-export default DashGraph
+export default DashOrders

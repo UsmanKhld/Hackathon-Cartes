@@ -5,6 +5,10 @@ import Sidenav from '../Sidenav/Sidenav';
 export const DashCart = ({cart, setCartData}) => {
     const navigate = useNavigate();
 
+    const handleCheckout = () => {
+        console.log("checkout")
+    }
+
     const handleContinueShopping = () => {
         navigate('/restaurant-dash');
         console.log(cart);
@@ -42,11 +46,37 @@ export const DashCart = ({cart, setCartData}) => {
       const formattedTotalPrice = totalPrice.toFixed(2); // Round to two decimal places
 
   return (
-    <div>
+    <div className='bg-sky-200 h-full'>
         <Sidenav />
-        <div className='w-full justify-center flex py-10 px-2 space-x-6 h-full bg-sky-200'>
+        <div className='w-full justify-center flex py-10 px-2 space-x-6 h-full '>
         <main>
-            <div className=' text-center font-mono font-bold text-5xl mb-5'>Cart</div>
+            <div className=' text-center font-mono font-bold text-6xl mb-5'>Cart</div>
+            <div className='space-y-6'>
+            {cart.map((item, index) => (
+                <div className=' bg-white rounded-xl h-52 w-80 outline flex flex-col items-center space-y-6' key={index}>
+                    <div className='flex justify-center text-center text-4xl mt-5'>
+                        {item.title}
+                    </div>
+                    <div className='flex justify-start text-2xl '>
+                        Price: {item.price} 
+                    </div>
+                    <p>
+                        Quantity: {item.quantity} <button className='bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-1 px-2.5 border border-blue-500 hover:border-transparent rounded space-x-5' onClick={() => handleMinusQuantity(index)}> - </button>
+                        <button className='bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-1 px-2 border border-blue-500 hover:border-transparent rounded' onClick={() => handleAddQuantity(index)}> + </button>
+                    </p>
+                </div>
+            ))}
+            </div>
+            <h2>Total Price: {formattedTotalPrice}</h2>
+            <button className='bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-1 px-2.5 border border-blue-500 hover:border-transparent rounded space-x-5' onClick={handleContinueShopping}>
+            Continue Shopping
+            </button>
+            <button className='bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-1 px-2.5 border border-blue-500 hover:border-transparent rounded space-x-5' onClick={handleCheckout}>
+                Checkout
+            </button>
+            <button className='bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-1 px-2.5 border border-blue-500 hover:border-transparent rounded space-x-5' onClick={handleClearCart}>
+                Clear Cart
+            </button>
         </main>
         </div>
     </div>

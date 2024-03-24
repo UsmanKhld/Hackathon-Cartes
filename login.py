@@ -17,7 +17,10 @@ def submitform():
     password=request.form.get('password')
     print("Received email:", email)
     print("Received password:", password)
-    return 'Form Submitted!'
+
+@app.route('/restaurant-signup', methods=['POST'])
+def signup():
+    return 'Successful'
 
 if __name__ == '__main__': 
    app.run(debug = True) 

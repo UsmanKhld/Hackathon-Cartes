@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react';
 import './RestaurantLogin.css'
 import rest from '../../assets/Restaurant-cartoon.png'
 
@@ -10,7 +10,7 @@ export const RestaurantLogin = () => {
     event.preventDefault();
 
     try {
-      const response = await fetch('/submit-form', {
+      const response = await fetch('http://localhost:5173/restaurant-signup', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

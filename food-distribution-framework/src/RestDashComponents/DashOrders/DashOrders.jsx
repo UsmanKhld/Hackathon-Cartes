@@ -7,7 +7,7 @@ export const DashOrders = () => {
         <Sidenav />
         <main>
             <h1>
-                DashGraph
+                DashOrders
             </h1>
         </main>
     </div>

@@ -3,33 +3,6 @@ import './RestaurantLogin.css'
 import rest from '../../assets/Restaurant-cartoon.png'
 
 export const RestaurantLogin = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-
-    try {
-      const response = await fetch('http://localhost:5173/restaurant-signup', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ email, password })
-      });
-
-      if (response.ok) {
-        // Form submitted successfully
-        console.log('Form submitted successfully');
-      } else {
-        // Handle error
-        console.error('Form submission failed');
-      }
-    } catch (error) {
-      // Handle network errors
-      console.error('Error submitting form:', error);
-    }
-  };
   return (
     <div className='login_bg flex justify-center items-center'>
       <div className=' rounded-xl h-128 shadow-lg w-200 bg-white py-9 px-5 flex'>
@@ -37,15 +10,13 @@ export const RestaurantLogin = () => {
           <div className='flex justify-center text-6xl font-serif text-blue-700 mb-12 '>
             Sign up
           </div>
-          <form onSubmit={handleSubmit}>
+          <form>
             <div className='inputs'>
               <div className='input'>
                 <input
                   type='text'
                   placeholder='Email'
                   className='input-field'
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
                 />
                 <label htmlFor='input-field' className='input-label'>Email</label>
                 <span className='input-highlight'></span>
@@ -55,15 +26,14 @@ export const RestaurantLogin = () => {
                   type='text'
                   placeholder='Password'
                   className='input-field'
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
                 />
                 <label htmlFor='input-field' className='input-label'>Password</label>
                 <span className='input-highlight'></span>
               </div>
             </div>
-            <button type="submit" className='form_buttons'>Submit</button>
+            
           </form>
+          <a href='/restaurant-dash'><button className='form_buttons'>Submit</button></a>
           <button className='form_buttons'>Forgot Password</button>
 
         </div>

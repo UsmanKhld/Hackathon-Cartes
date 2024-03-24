@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { Home, RestaurantDashboard, RestaurantLogin, SupplierLogin } from './Pages/index'
 import { DashOrders, DashHome, DashCart } from './RestDashComponents/index';
+import DashCheckout from './RestDashComponents/DashCheckout/DashCheckout';
 
 const App = () => {
 
@@ -66,6 +67,7 @@ const App = () => {
           <Route path="/restaurant-dash" element={<DashHome addToCart={addToCart} />} />
           <Route path="/restaurant-dash/orders" element={<DashOrders />} />
           <Route path="/restaurant-dash/cart" element={<DashCart cart={cartData} addToCart={addToCart} setCartData={setCartData} />} />
+          <Route path="/restaurant-dash/checkout" element={<DashCheckout cart={cartData} addToCart={addToCart} setCartData={setCartData} />} />
         </Routes>
       </div>
     </Router>

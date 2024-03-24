@@ -1,21 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Sidenav from '../Sidenav/Sidenav';
 import { ethers } from 'ethers';
 import { Web3Provider } from '@ethersproject/providers';
 
 export const DashCart = ({cart, setCartData}) => {
-  
-  
-    const navigate = useNavigate();
 
-    const handleCheckout = async(e) => {
-      e.preventDefault();
-      const ethValue = ethers.utils.parseEther(depositValue)
-      const deposit = await contract.deposit({value: ethValue});
-      await deposit.wait();
-      const balance = await provider.getBalance(contractAddress);
-      setBalance(ethers.utils.formatEther(balance));
+    
+    const navigate = useNavigate();
+  
+    const handleCheckout = () => {
+        navigate('/restaurant-dash/checkout');
     }
 
     const handleContinueShopping = () => {
@@ -52,6 +47,7 @@ export const DashCart = ({cart, setCartData}) => {
         return acc + numericPrice * item.quantity;
       }, 0);
       
+      
       const formattedTotalPrice = totalPrice.toFixed(2); // Round to two decimal places
 
   return (
@@ -87,9 +83,13 @@ export const DashCart = ({cart, setCartData}) => {
                 Clear Cart
             </button>
         </main>
+        
         </div>
+
     </div>
   )
+  
 }
+
 
 export default DashCart;

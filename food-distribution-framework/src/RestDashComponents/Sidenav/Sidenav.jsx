@@ -1,7 +1,7 @@
 import React from 'react'
 import './Sidenav.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHouse, faChartLine, faSchool, faStar, faLandmark, faDollarSign, faGraduationCap, faBriefcase, faBullhorn, faUser } from '@fortawesome/free-solid-svg-icons'
+import { faHouse, faChartLine, faSchool, faStar, faLandmark, faDollarSign, faGraduationCap, faBriefcase, faBullhorn, faUser, faCartShopping } from '@fortawesome/free-solid-svg-icons'
 
 export const Sidenav = () => {
   return (
@@ -16,8 +16,15 @@ export const Sidenav = () => {
           </li>
 
           <li className='sidenav-item'>
-            <a href='/restaurant-dash/graph' className='sidenav-link'>
-              <FontAwesomeIcon icon={faChartLine} className='sidenav-icons fa-2x' />
+            <a href='/restaurant-dash/cart' className='sidenav-link'>
+              <FontAwesomeIcon icon={faCartShopping} className='sidenav-icons fa-2x' />
+              <span className='link-text'>Cart</span>
+            </a>
+          </li>
+
+          <li className='sidenav-item'>
+            <a href='/restaurant-dash/orders' className='sidenav-link'>
+              <FontAwesomeIcon icon={faDollarSign} className='sidenav-icons fa-2x' />
               <span className='link-text'>Order Manager</span>
             </a>
           </li>

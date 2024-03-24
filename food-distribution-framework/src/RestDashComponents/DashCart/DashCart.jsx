@@ -1,12 +1,21 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Sidenav from '../Sidenav/Sidenav';
+import { ethers } from 'ethers';
+import { Web3Provider } from '@ethersproject/providers';
 
 export const DashCart = ({cart, setCartData}) => {
+  
+  
     const navigate = useNavigate();
 
-    const handleCheckout = () => {
-        console.log("checkout")
+    const handleCheckout = async(e) => {
+      e.preventDefault();
+      const ethValue = ethers.utils.parseEther(depositValue)
+      const deposit = await contract.deposit({value: ethValue});
+      await deposit.wait();
+      const balance = await provider.getBalance(contractAddress);
+      setBalance(ethers.utils.formatEther(balance));
     }
 
     const handleContinueShopping = () => {
